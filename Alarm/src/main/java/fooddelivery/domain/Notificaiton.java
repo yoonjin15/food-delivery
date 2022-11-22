@@ -81,24 +81,12 @@ public class Notificaiton  {
     }
     public static void notified(OrderCompleted orderCompleted){
 
-        /** Example 1:  new item 
-        Notificaiton notificaiton = new Notificaiton();
-        repository().save(notificaiton);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCompleted.get???()).ifPresent(notificaiton->{
+        repository.findById(orderCompleted.getId().ifPresent(notificaiton))->{
             
-            notificaiton // do something
+            notificaiton.setMessage("알림메시지");
             repository().save(notificaiton);
 
-
-         });
-        */
-
-        
+         });       
     }
 
 
