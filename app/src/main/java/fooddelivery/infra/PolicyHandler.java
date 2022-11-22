@@ -26,6 +26,8 @@ public class PolicyHandler{
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryStarted'")
     public void wheneverDeliveryStarted_OrderStatusChange(@Payload DeliveryStarted deliveryStarted){
 
+    DeliveryStarted event = deliveryStarted;
+        
         if(event.getOrderId()!=null) {
             orderRepository.findById(Long.valueOf(event.getOrderId())).ifPresent((order)->{
                order.setStatus("배달시작됨");
@@ -35,6 +37,8 @@ public class PolicyHandler{
     }
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='DeliveryCompleted'")
     public void wheneverDeliveryCompleted_OrderStatusChange(@Payload DeliveryCompleted deliveryCompleted){
+        
+    DeliveryCompleted event = deliveryCompleted;
         
         orderRepository.findById(Long.valueOf(event.getOrderId())).ifPresent((order)->{
            order.setStatus("배달완료됨");
