@@ -26,37 +26,24 @@ public class PolicyHandler{
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCanceled'")
     public void wheneverOrderCanceled_OrderReject(@Payload OrderCanceled orderCanceled){
 
-        OrderCanceled event = orderCanceled;
-        System.out.println("\n\n##### listener OrderReject : " + orderCanceled + "\n\n");
-
-
-        
-
-        // Sample Logic //
-        OrderManagement.orderReject(event);
-        
-
-        
-
+        if(orderCanceled.isMe()){
+            System.out.println("##### listener 주문취소처리 : " + orderCanceled.toJson());
+            
+            orderManagementRepository.findById(orderCanceled.getOrderId()).ifPresent(OrderManagement->{
+                orderManagementRepository.delete(OrderManagement);
+            });
+        }
     }
 
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='Paid'")
     public void wheneverPaid_OrderInfoReceived(@Payload Paid paid){
 
-        Paid event = paid;
-        System.out.println("\n\n##### listener OrderInfoReceived : " + paid + "\n\n");
+        if(paid.isMe()){
+            System.out.println("##### listener 주문정보받음 : " + paid.toJson());
 
-
-        
-
-        // Sample Logic //
-        OrderManagement.orderInfoReceived(event);
-        
-
-        
-
+            OrderManagement orderManagement = new OrderManagement();
+            orderManagement.setOrderId(Long.valueOf(paid.getOrderId()));
+            orderManagementRepository.save(orderManagement);
+        }
     }
-
 }
-
-
