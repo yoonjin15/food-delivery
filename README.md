@@ -36,7 +36,7 @@ https://github.com/yoonjin15/food-delivery/issues/5#issue-1459162636
 https://github.com/yoonjin15/food-delivery/issues/3#issue-1459131830
 
 ** Req/Res
-#(comment)
+https://github.com/yoonjin15/food-delivery/issues/6#issue-1459178262
 
 ** 서킷브레이크
 #(comment)
