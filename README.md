@@ -30,7 +30,7 @@ https://github.com/yoonjin15/food-delivery/issues/1#issue-1459121913
 https://github.com/yoonjin15/food-delivery/issues/2#issue-1459129082
 
 ** CQRS
-#(comment)
+https://github.com/yoonjin15/food-delivery/issues/5#issue-1459162636
 
 ** Compensation / Correlation
 https://github.com/yoonjin15/food-delivery/issues/3#issue-1459131830
