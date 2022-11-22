@@ -24,7 +24,7 @@
 
 
 ** 도메인 모델링
-#1(comment)
+https://github.com/yoonjin15/food-delivery/issues/1#issue-1459121913
 
 ** Saga (Pub / Sub)
 #(comment)
