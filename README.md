@@ -27,7 +27,7 @@
 https://github.com/yoonjin15/food-delivery/issues/1#issue-1459121913
 
 ** Saga (Pub / Sub)
-#(comment)
+https://github.com/yoonjin15/food-delivery/issues/2#issue-1459129082
 
 ** CQRS
 #(comment)
