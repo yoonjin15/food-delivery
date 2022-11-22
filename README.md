@@ -39,7 +39,7 @@ https://github.com/yoonjin15/food-delivery/issues/3#issue-1459131830
 https://github.com/yoonjin15/food-delivery/issues/6#issue-1459178262
 
 ** 서킷브레이크
-#(comment)
+https://github.com/yoonjin15/food-delivery/issues/7#issue-1459248170
 
 ** Gateway
-#(comment)
+https://github.com/yoonjin15/food-delivery/issues/8#issue-1459250804
