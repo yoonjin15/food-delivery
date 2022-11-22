@@ -43,16 +43,8 @@ public class PolicyHandler{
     public void wheneverOrderCompleted_Notified(@Payload OrderCompleted orderCompleted){
 
         OrderCompleted event = orderCompleted;
-        System.out.println("\n\n##### listener Notified : " + orderCompleted + "\n\n");
 
-
-        
-
-        // Sample Logic //
-        Notificaiton.notified(event);
-        
-
-        
+        Notificaiton.notified(event.getMessage);
 
     }
 
