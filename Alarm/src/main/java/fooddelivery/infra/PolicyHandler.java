@@ -23,22 +23,6 @@ public class PolicyHandler{
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString){}
 
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='CouponPublished'")
-    public void wheneverCouponPublished_Notified(@Payload CouponPublished couponPublished){
-
-        CouponPublished event = couponPublished;
-        System.out.println("\n\n##### listener Notified : " + couponPublished + "\n\n");
-
-
-        
-
-        // Sample Logic //
-        Notificaiton.notified(event);
-        
-
-        
-
-    }
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderCompleted'")
     public void wheneverOrderCompleted_Notified(@Payload OrderCompleted orderCompleted){
 
@@ -47,7 +31,4 @@ public class PolicyHandler{
         Notificaiton.notified(event.getMessage);
 
     }
-
 }
-
-
