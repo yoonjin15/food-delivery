@@ -28,7 +28,7 @@ public class PolicyHandler{
 
         OrderCompleted event = orderCompleted;
 
-        Notificaiton.notified(event.getMessage);
+        Notificaiton.notified(event);
 
     }
 }
